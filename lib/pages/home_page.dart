@@ -1,3 +1,4 @@
+import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import "package:velocity_x/velocity_x.dart";
 
@@ -13,10 +14,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: "Hai Broo".text.bold.make(),
+        title: logo,
       ),
       body: Center(
-        child: "Hello Broo".marquee(),
+        child: "Hello Broo".text.make(),
       ),
     );
   }

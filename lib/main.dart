@@ -5,12 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    initialRoute: '/',
-    theme: appThemeData,
-    defaultTransition: Transition.fade,
-    getPages: AppPages.pages,
-    home: HomePage(),
-  ));
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      theme: appThemeData,
+      defaultTransition: Transition.fade,
+      getPages: AppPages.pages,
+      home: HomePage(),
+    );
+  }
 }
