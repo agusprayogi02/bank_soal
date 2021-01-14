@@ -62,11 +62,39 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_redux:
+    dependency: "direct main"
+    description:
+      name: flutter_redux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.7.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.24.0"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.2"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.4"
   matcher:
     dependency: transitive
     description:
@@ -75,7 +103,7 @@ packages:
     source: hosted
     version: "0.12.10-nullsafety.1"
   meta:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: meta
       url: "https://pub.dartlang.org"
@@ -88,6 +116,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
+  pedantic:
+    dependency: transitive
+    description:
+      name: pedantic
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.9.2"
+  redux:
+    dependency: transitive
+    description:
+      name: redux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0+3"
+  redux_thunk:
+    dependency: "direct main"
+    description:
+      name: redux_thunk
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -150,4 +199,4 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.3"
 sdks:
-  dart: ">=2.10.0-110 <2.11.0"
+  dart: ">=2.10.0 <2.11.0"
