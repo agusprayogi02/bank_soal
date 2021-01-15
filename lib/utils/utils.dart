@@ -9,12 +9,23 @@ final dartPrimaryC = Color(0xFF0039CB);
 final activeC = Color(0xFF00FF38);
 
 final logo = Row(
+  mainAxisAlignment: MainAxisAlignment.center,
   children: [
     Icon(
       Icons.school,
-      size: 40,
+      size: 45,
+      color: whiteC,
     ),
-    " bank".toUpperCase().text.fontFamily("Rasa").size(40).bold.make(),
-    "-soal".toUpperCase().text.fontFamily("Righteous").size(38).bold.make(),
+    " bank-soal"
+        .toUpperCase()
+        .text
+        .fontFamily("Rasa")
+        .white
+        .size(40)
+        .bold
+        .make()
+        .box
+        .margin(EdgeInsets.only(top: 3))
+        .make(),
   ],
 );
