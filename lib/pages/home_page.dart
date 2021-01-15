@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
         title: logo,
       ),
       body: Center(
-        child: "Hello Broo".text.make(),
+        child: "matematika".text.make(),
       ),
     );
   }

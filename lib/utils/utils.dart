@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-final String apiUrl = "http://localhost:4000";
+final String apiUrl = "http://192.168.43.116:4000/";
 final lightC = Color(0xFF83B9FF);
 final whiteC = Color(0xFFFFFFFF);
 final primaryC = Color(0xFF2962FF);
@@ -10,8 +10,11 @@ final activeC = Color(0xFF00FF38);
 
 final logo = Row(
   children: [
-    Icon(Icons.school),
-    "bank".toUpperCase().text.fontFamily("Rasa").size(40).bold.make(),
-    "soal".toUpperCase().text.fontFamily("Righteous").size(38).make(),
+    Icon(
+      Icons.school,
+      size: 40,
+    ),
+    " bank".toUpperCase().text.fontFamily("Rasa").size(40).bold.make(),
+    "-soal".toUpperCase().text.fontFamily("Righteous").size(38).bold.make(),
   ],
 );
