@@ -1,4 +1,3 @@
-import 'package:bank_soal/pages/home_page.dart';
 import 'package:bank_soal/utils/app_pages.dart';
 import 'package:bank_soal/utils/app_themes.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.INITIAL,
-      theme: appThemeData,
+      theme: Themes.light,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
     );

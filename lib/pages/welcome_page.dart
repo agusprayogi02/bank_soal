@@ -1,4 +1,5 @@
 import 'package:bank_soal/components/box_rounded.dart';
+import 'package:bank_soal/utils/app_pages.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,21 @@ class _WelcomePageState extends State<WelcomePage> {
               .margin(EdgeInsets.only(top: h * 0.05, bottom: h * 0.066))
               .make(),
           logo,
-          BoxRounded().marginOnly(top: h * 0.27)
+          "Bank Soal merupakan sekumpulan butir soal terkalibrasi (teruji), baik secara teori "
+                  "maupun empiris, dan memuat informasi penting. Untuk menguji kemanpuan siswa, agar saling berkompetisi."
+              .text
+              .medium
+              .white
+              .justify
+              .make()
+              .box
+              .width(280)
+              .make()
+              .marginOnly(top: h * 0.02),
+          BoxRounded(
+            onLoginPress: () => Get.toNamed(Routes.LOGIN),
+            onRegisterPress: () {},
+          ).marginOnly(top: h * 0.08)
         ],
       ).box.color(primaryC).width(w).make(),
     );
