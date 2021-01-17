@@ -10,7 +10,9 @@ class SignInController extends GetxController {
 
   final email = "".obs;
   final password = "".obs;
+  final enable = true.obs;
   final appState = Rx<AppState>();
   void onEmail(val) => this.email.value = val;
   void onPass(val) => this.password.value = val;
+  void onSecure() => this.enable.value = !this.enable.value;
 }

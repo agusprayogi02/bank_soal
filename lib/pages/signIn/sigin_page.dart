@@ -1,6 +1,8 @@
+import 'package:bank_soal/components/button/rounded_back.dart';
 import 'package:bank_soal/components/costom_text_form.dart';
-import 'package:bank_soal/components/rounded_button.dart';
+import 'package:bank_soal/components/button/rounded_button.dart';
 import 'package:bank_soal/pages/signIn/signin_controller.dart';
+import 'package:bank_soal/utils/app_pages.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,51 +17,85 @@ class SignInPage extends GetView<SignInController> {
         toolbarHeight: 0,
       ),
       body: Container(
-        margin: EdgeInsets.only(top: 20),
-        padding: EdgeInsets.all(20),
-        child: Image.asset("assets/img/study.png"),
-      ),
-      backgroundColor: primaryC,
-      bottomSheet: Container(
-        decoration: BoxDecoration(
-          color: lightC,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
-        ),
-        height: h * 0.5,
-        padding: EdgeInsets.symmetric(horizontal: 34, vertical: 12),
-        child: Column(
+        child: Stack(
           children: [
-            "Login".text.size(32).color(dartPrimaryC).bold.make(),
-            SizedBox(
-              height: 20,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(14),
+                  child: RoundedBack(onPress: () => Get.back()),
+                ),
+                Container(width: w, child: Image.asset("assets/img/study.png")),
+              ],
             ),
-            CustomTextForm(
-              labelText: "Email",
-              autocorrect: false,
-              onChanged: SignInController.to.onEmail,
-              prefixIcon: Icon(Icons.email),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            CustomTextForm(
-              labelText: "Password",
-              autocorrect: false,
-              onChanged: SignInController.to.onPass,
-              prefixIcon: Icon(Icons.lock),
-              suffixIcon: Icon(Icons.visibility),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            RoundedButton(
-              label: "Login",
-              size: 20,
-              onPress: () {},
+            Column(
+              children: [
+                Spacer(),
+                Container(
+                  decoration: BoxDecoration(
+                    color: lightC,
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                  ),
+                  height: h * 0.46,
+                  padding: EdgeInsets.symmetric(horizontal: 34, vertical: 12),
+                  child: Obx(
+                    () => Column(
+                      children: [
+                        "Login".text.size(32).color(dartPrimaryC).bold.make(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CustomTextForm(
+                          labelText: "Email",
+                          autocorrect: false,
+                          onChanged: SignInController.to.onEmail,
+                          prefixIcon: Icon(Icons.email),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CustomTextForm(
+                          labelText: "Password",
+                          autocorrect: false,
+                          obscureText: SignInController.to.enable.value,
+                          onChanged: SignInController.to.onPass,
+                          prefixIcon: Icon(Icons.lock),
+                          suffixIcon: GestureDetector(
+                            onTap: SignInController.to.onSecure,
+                            child: Icon(Icons.visibility),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        RoundedButton(
+                          label: "Login",
+                          size: 20,
+                          onPress: () {},
+                          width: w,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            "Belum Punya Akun? ".text.make(),
+                            "Register"
+                                .text
+                                .color(primaryC)
+                                .make()
+                                .onInkTap(() => Get.toNamed(Routes.HOME))
+                          ],
+                        ).marginOnly(top: 15)
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         ),
       ),
+      backgroundColor: primaryC,
     );
   }
 }

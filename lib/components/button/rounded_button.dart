@@ -8,6 +8,7 @@ class RoundedButton extends StatelessWidget {
   final Function onPress;
   final Color color;
   final double borderRadius;
+  final double width;
   const RoundedButton({
     Key key,
     this.size,
@@ -15,11 +16,13 @@ class RoundedButton extends StatelessWidget {
     this.onPress,
     this.color = primaryC,
     this.borderRadius = 5,
+    this.width,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
       child: FlatButton(
         color: color,
         textColor: whiteC,
@@ -31,7 +34,7 @@ class RoundedButton extends StatelessWidget {
             .size(size)
             .make()
             .box
-            .margin(EdgeInsets.symmetric(vertical: size * 0.4, horizontal: size))
+            .margin(EdgeInsets.symmetric(vertical: size * 0.4))
             .make(),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
