@@ -24,11 +24,11 @@ class BoxRounded extends StatelessWidget {
               onPressed: onRegisterPress,
               child: "Register"
                   .text
-                  .size(Get.height * 0.03)
+                  .size(Get.height * 0.028)
                   .color(dartPrimaryC)
                   .bold
                   .make()
-                  .marginSymmetric(horizontal: 20, vertical: 12),
+                  .marginSymmetric(horizontal: 18, vertical: 12),
             ),
           ),
           ClipRRect(

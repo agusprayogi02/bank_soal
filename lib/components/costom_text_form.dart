@@ -21,6 +21,7 @@ class CustomTextForm extends StatelessWidget {
   final TextInputAction textInputAction;
   final Widget suffix;
   final Widget suffixIcon;
+  final Widget prefixIcon;
 
   const CustomTextForm({
     Key key,
@@ -42,6 +43,7 @@ class CustomTextForm extends StatelessWidget {
     this.textInputAction,
     this.suffix,
     this.suffixIcon,
+    this.prefixIcon,
   }) : super(key: key);
 
   @override
@@ -65,6 +67,7 @@ class CustomTextForm extends StatelessWidget {
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           suffix: suffix,
+          prefixIcon: prefixIcon,
           hintText: hintText,
           errorText: errorText,
           labelText: labelText,

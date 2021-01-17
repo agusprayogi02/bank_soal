@@ -85,7 +85,7 @@ const authPlateDecoration = BoxDecoration(
 const inputFieldFocusedBorderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(6)),
     borderSide: BorderSide(
-      color: lightC,
+      color: dartPrimaryC,
     ));
 
 const inputFieldDefaultBorderStyle = OutlineInputBorder(

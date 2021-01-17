@@ -7,7 +7,7 @@ const whiteC = Color(0xFFFFFFFF);
 const primaryC = Color(0xFF2962FF);
 const dartPrimaryC = Color(0xFF0039CB);
 const activeC = Color(0xFF00FF38);
-const Color bgColor = Color(0xffF4F7FA);
+const Color bgColor = Color(0xFF83B9FF);
 
 final logo = Row(
   mainAxisAlignment: MainAxisAlignment.center,
