@@ -61,10 +61,10 @@ class SignInPage extends GetView<SignInController> {
                           obscureText: SignInController.to.enable.value,
                           onChanged: SignInController.to.onPass,
                           prefixIcon: Icon(Icons.lock),
-                          suffixIcon: GestureDetector(
-                            onTap: SignInController.to.onSecure,
-                            child: Icon(Icons.visibility),
-                          ),
+                          suffixIcon: Icon(SignInController.to.enable.value
+                                  ? Icons.visibility
+                                  : Icons.visibility_off)
+                              .onInkTap(SignInController.to.onSecure),
                         ),
                         SizedBox(
                           height: 20,
@@ -83,7 +83,7 @@ class SignInPage extends GetView<SignInController> {
                                 .text
                                 .color(primaryC)
                                 .make()
-                                .onInkTap(() => Get.toNamed(Routes.HOME))
+                                .onInkTap(() => Get.offAndToNamed(Routes.REGISTER))
                           ],
                         ).marginOnly(top: 15)
                       ],

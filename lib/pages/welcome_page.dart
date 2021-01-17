@@ -41,7 +41,7 @@ class _WelcomePageState extends State<WelcomePage> {
               .marginOnly(top: h * 0.02),
           BoxRounded(
             onLoginPress: () => Get.toNamed(Routes.LOGIN),
-            onRegisterPress: () {},
+            onRegisterPress: () => Get.toNamed(Routes.REGISTER),
           ).marginOnly(top: h * 0.08)
         ],
       ).box.color(primaryC).width(w).make(),
