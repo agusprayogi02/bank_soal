@@ -1,7 +1,7 @@
 import 'package:bank_soal/components/button/rounded_back.dart';
 import 'package:bank_soal/components/costom_text_form.dart';
 import 'package:bank_soal/components/button/rounded_button.dart';
-import 'package:bank_soal/pages/signIn/signin_controller.dart';
+import 'package:bank_soal/pages/login/signin_controller.dart';
 import 'package:bank_soal/utils/app_pages.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';

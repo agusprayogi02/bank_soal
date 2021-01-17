@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 class SignInController extends GetxController {
   static SignInController get to => Get.find();
 
-  final AuthRepository authRepo;
-  SignInController(this.authRepo);
+  final AuthRepository repository;
+  SignInController({this.repository});
 
   final email = "".obs;
   final password = "".obs;
