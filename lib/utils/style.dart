@@ -55,7 +55,8 @@ const taglineText = TextStyle(color: Colors.grey, fontFamily: 'Poppins');
 const categoryText =
     TextStyle(color: Color(0xff444444), fontWeight: FontWeight.w700, fontFamily: 'Poppins');
 
-const inputFieldTextStyle = TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400);
+const inputFieldTextStyle =
+    TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, color: dartPrimaryC);
 
 const inputFieldHintTextStyle = TextStyle(fontFamily: 'Poppins', color: Color(0xff444444));
 
@@ -78,17 +79,26 @@ const authPlateDecoration = BoxDecoration(
     borderRadius: BorderRadiusDirectional.only(
         bottomEnd: Radius.circular(20), bottomStart: Radius.circular(20)));
 
+final roundedBox = BoxDecoration(
+  borderRadius: BorderRadius.all(Radius.circular(6)),
+  border: Border.all(color: dartPrimaryC),
+);
+
 /////////////////////////////////////
 /// INPUT FIELD DECORATION STYLES
 ////////////////////////////////////
 
 const inputFieldFocusedBorderStyle = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(6)),
-    borderSide: BorderSide(
-      color: dartPrimaryC,
-    ));
+  borderRadius: BorderRadius.all(Radius.circular(6)),
+  borderSide: BorderSide(
+    color: Colors.black54,
+  ),
+);
 
 const inputFieldDefaultBorderStyle = OutlineInputBorder(
+  borderSide: BorderSide(
+    color: dartPrimaryC,
+  ),
   gapPadding: 0,
   borderRadius: BorderRadius.all(
     Radius.circular(6),

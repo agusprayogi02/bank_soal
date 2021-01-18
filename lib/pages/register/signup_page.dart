@@ -3,21 +3,21 @@ import 'package:bank_soal/components/button/rounded_button.dart';
 import 'package:bank_soal/components/costom_text_form.dart';
 import 'package:bank_soal/pages/register/signup_controller.dart';
 import 'package:bank_soal/utils/app_pages.dart';
+import 'package:bank_soal/utils/style.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class SignUpPage extends GetView<SignUpController> {
-  List<String> items = <String>["Laki-Laki", "Perempuan"];
   @override
   Widget build(BuildContext context) {
+    List<String> items = <String>["Jenis Kelamin", "Laki-Laki", "Perempuan"];
     var w = Get.width, h = Get.height;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      resizeToAvoidBottomPadding: false,
       backgroundColor: primaryC,
       body: Container(
         child: Stack(
@@ -32,33 +32,47 @@ class SignUpPage extends GetView<SignUpController> {
             Column(
               children: [
                 Spacer(),
-                SingleChildScrollView(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: lightC,
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
-                    ),
-                    height: h * 0.7,
-                    padding: EdgeInsets.symmetric(horizontal: 34, vertical: 12),
+                Container(
+                  decoration: BoxDecoration(
+                    color: lightC,
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                  ),
+                  height: h * 0.6,
+                  padding: EdgeInsets.symmetric(horizontal: 34, vertical: 12),
+                  child: SingleChildScrollView(
+                    physics: ClampingScrollPhysics(),
                     child: Obx(
                       () => Column(
+                        mainAxisSize: MainAxisSize.max,
                         children: [
                           "Register".text.size(32).color(dartPrimaryC).bold.make(),
                           SizedBox(
                             height: 20,
                           ),
-                          CustomTextForm(
-                            labelText: "FistName",
-                            autocorrect: false,
-                            onChanged: SignUpController.to.onFist,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          CustomTextForm(
-                            labelText: "LastName",
-                            autocorrect: false,
-                            onChanged: SignUpController.to.onLast,
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 8,
+                                child: CustomTextForm(
+                                  labelText: "FistName",
+                                  autocorrect: false,
+                                  prefixIcon: Icon(Icons.person),
+                                  onChanged: SignUpController.to.onFist,
+                                ),
+                              ),
+                              Flexible(
+                                flex: 1,
+                                child: Container(),
+                              ),
+                              Expanded(
+                                flex: 8,
+                                child: CustomTextForm(
+                                  labelText: "LastName",
+                                  autocorrect: false,
+                                  onChanged: SignUpController.to.onLast,
+                                ),
+                              ),
+                            ],
                           ),
                           SizedBox(
                             height: 20,
@@ -66,6 +80,7 @@ class SignUpPage extends GetView<SignUpController> {
                           CustomTextForm(
                             labelText: "Email",
                             autocorrect: false,
+                            textInputType: TextInputType.emailAddress,
                             onChanged: SignUpController.to.onEmail,
                             prefixIcon: Icon(Icons.email),
                           ),
@@ -86,19 +101,32 @@ class SignUpPage extends GetView<SignUpController> {
                           SizedBox(
                             height: 20,
                           ),
-                          DropdownButton<String>(
-                            hint: "Jenis Kelamin".text.make(),
-                            value: SignUpController.to.jk.value,
-                            items: items
-                                .map((e) => DropdownMenuItem(value: e, child: "$e".text.make()))
-                                .toList(),
-                            onChanged: (value) => SignUpController.to.onJk(value),
-                          ).box.size(w, h * 0.04).padding(EdgeInsets.only(left: 10)).make(),
+                          Container(
+                            width: w,
+                            decoration: roundedBox,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.history,
+                                  color: Colors.black54,
+                                ).marginSymmetric(horizontal: 10),
+                                DropdownButton<String>(
+                                  hint: "Jenis Kelamin".text.make(),
+                                  value: SignUpController.to.jk.value,
+                                  items: items
+                                      .map((e) => DropdownMenuItem(
+                                          value: e, child: "$e                       ".text.make()))
+                                      .toList(),
+                                  onChanged: (value) => SignUpController.to.onJk(value),
+                                )
+                              ],
+                            ),
+                          ),
                           SizedBox(
                             height: 20,
                           ),
                           RoundedButton(
-                            label: "Login",
+                            label: "Register",
                             size: 20,
                             onPress: () {},
                             width: w,

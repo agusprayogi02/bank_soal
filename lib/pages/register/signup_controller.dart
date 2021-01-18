@@ -11,7 +11,7 @@ class SignUpController extends GetxController {
   final last = ''.obs;
   final email = ''.obs;
   final password = ''.obs;
-  final jk = "Laki-Laki".obs;
+  final jk = "Jenis Kelamin".obs;
   final enable = true.obs;
 
   void onFist(val) => this.fist.value = val;

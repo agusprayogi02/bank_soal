@@ -49,6 +49,7 @@ class SignInPage extends GetView<SignInController> {
                         CustomTextForm(
                           labelText: "Email",
                           autocorrect: false,
+                          textInputType: TextInputType.emailAddress,
                           onChanged: SignInController.to.onEmail,
                           prefixIcon: Icon(Icons.email),
                         ),
