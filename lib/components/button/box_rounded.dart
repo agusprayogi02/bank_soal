@@ -18,7 +18,7 @@ class BoxRounded extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: FlatButton(
+            child: MaterialButton(
               color: whiteC,
               splashColor: lightC,
               onPressed: onRegisterPress,
@@ -33,7 +33,7 @@ class BoxRounded extends StatelessWidget {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: FlatButton(
+            child: MaterialButton(
               splashColor: lightC,
               onPressed: onLoginPress,
               child: "Login"

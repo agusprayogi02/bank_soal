@@ -23,7 +23,7 @@ class RoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      child: FlatButton(
+      child: MaterialButton(
         color: color,
         textColor: whiteC,
         splashColor: lightC,

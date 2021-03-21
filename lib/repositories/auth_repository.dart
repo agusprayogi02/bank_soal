@@ -28,7 +28,7 @@ class AuthRepositoryImp implements AuthRepository {
   @override
   Future<UserModel> authRegister(
       String firstName, String lastName, String email, String password, String jk, String role) {
-    // TODO: implement authRegister
+    // implement authRegister
     throw UnimplementedError();
   }
 }
