@@ -15,4 +15,11 @@ class SignInController extends GetxController {
   void onEmail(val) => this.email.value = val;
   void onPass(val) => this.password.value = val;
   void onSecure() => this.enable.value = !this.enable.value;
+  void onSubmit() {
+    if (email.value != '' && password.value != '') {
+      this.repository.authLogin(email.value, password.value);
+    } else {
+      Get.snackbar("Error", "Harus diisi Semua!");
+    }
+  }
 }

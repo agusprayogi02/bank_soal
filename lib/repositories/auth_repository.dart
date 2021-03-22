@@ -20,7 +20,7 @@ class AuthRepositoryImp implements AuthRepository {
       var user = await apiClient.postLogin(email, password);
       return user;
     } catch (e) {
-      Get.snackbar("error", e.error);
+      Get.snackbar("error", e.toString());
       return null;
     }
   }

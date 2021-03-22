@@ -73,7 +73,7 @@ class SignInPage extends GetView<SignInController> {
                         RoundedButton(
                           label: "Login",
                           size: 20,
-                          onPress: () {},
+                          onPress: () => SignInController.to.onSubmit(),
                           width: w,
                         ),
                         Row(
