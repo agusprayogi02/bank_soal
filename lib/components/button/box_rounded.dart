@@ -38,7 +38,7 @@ class BoxRounded extends StatelessWidget {
               onPressed: onLoginPress,
               child: "Login"
                   .text
-                  .size(Get.height * 0.03)
+                  .size(Get.height * 0.028)
                   .color(whiteC)
                   .bold
                   .make()

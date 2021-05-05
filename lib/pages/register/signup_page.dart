@@ -38,7 +38,8 @@ class SignUpPage extends GetView<SignUpController> {
                     borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
                   ),
                   height: h * 0.6,
-                  padding: EdgeInsets.symmetric(horizontal: 34, vertical: 12),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: context.percentWidth * 9, vertical: context.percentHeight * 1.8),
                   child: SingleChildScrollView(
                     physics: ClampingScrollPhysics(),
                     child: Obx(
@@ -141,7 +142,7 @@ class SignUpPage extends GetView<SignUpController> {
                             ],
                           ).marginOnly(top: 15)
                         ],
-                      ),
+                      ).scrollVertical(),
                     ),
                   ),
                 ),

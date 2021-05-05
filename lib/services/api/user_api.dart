@@ -6,19 +6,14 @@ import 'package:get/get_connect/connect.dart';
 
 class UserApiClient extends GetConnect {
   Future<UserModel> postLogin(String user, String pass) async {
-    final form = FormData(<String, String>{
-      'user': user,
-      'pass': pass,
+    final form = jsonEncode(<String, String>{
+      'email': user,
+      'password': pass,
     });
-    var respon = await post(
-      apiUrl + "/users/login",
-      form,
-      headers: {
-        'content-type': "application/json",
-      },
-    );
-    var status = jsonDecode(respon.body)['status'];
-    var data = jsonDecode(respon.body)['data'];
+    var respon = await post(apiUrl + "/users/login", form);
+    var status = respon.body['status'];
+    var data = respon.body['data'];
+    print(status);
     if (status != 200) {
       print("gagal");
       throw (data['error']);

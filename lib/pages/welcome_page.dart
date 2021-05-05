@@ -15,7 +15,7 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    double w = Get.width, h = Get.height;
+    double w = context.width, h = context.percentHeight;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
@@ -25,7 +25,7 @@ class _WelcomePageState extends State<WelcomePage> {
         children: [
           Image.asset("assets/img/work.png")
               .box
-              .margin(EdgeInsets.only(top: h * 0.05, bottom: h * 0.066))
+              .margin(EdgeInsets.only(top: h * 5, bottom: h * 6.6))
               .make(),
           logo,
           "Bank Soal merupakan sekumpulan butir soal terkalibrasi (teruji), baik secara teori "
@@ -38,13 +38,13 @@ class _WelcomePageState extends State<WelcomePage> {
               .box
               .width(280)
               .make()
-              .marginOnly(top: h * 0.02),
+              .marginOnly(top: h * 2),
           BoxRounded(
             onLoginPress: () => Get.toNamed(Routes.LOGIN),
             onRegisterPress: () => Get.toNamed(Routes.REGISTER),
-          ).marginOnly(top: h * 0.08)
+          ).marginOnly(top: h * 8)
         ],
-      ).box.color(primaryC).width(w).make(),
+      ).box.color(primaryC).width(w).height(h * 100).make().scrollVertical(),
     );
   }
 }

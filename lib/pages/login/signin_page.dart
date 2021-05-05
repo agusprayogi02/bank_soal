@@ -38,7 +38,8 @@ class SignInPage extends GetView<SignInController> {
                     borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
                   ),
                   height: h * 0.46,
-                  padding: EdgeInsets.symmetric(horizontal: 34, vertical: 12),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: context.percentWidth * 9, vertical: context.percentHeight * 1.8),
                   child: Obx(
                     () => Column(
                       children: [
