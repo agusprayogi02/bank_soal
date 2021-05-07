@@ -38,7 +38,7 @@ class AuthRepositoryImp implements AuthRepository {
   Future<bool> onAuth() async {
     var box = GetStorage();
     try {
-      var user = box.read('user');
+      var user = box.read('login');
       if (user) {
         return true;
       }

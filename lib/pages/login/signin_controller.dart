@@ -22,6 +22,7 @@ class SignInController extends GetxController {
     if (email.value != '' && password.value != '') {
       var user = await this.repository.authLogin(email.value, password.value);
       box.write("user", user.toString());
+      box.write("login", true);
       Get.offAndToNamed(Routes.HOME);
     } else {
       Get.snackbar("Error", "Harus diisi Semua!");
