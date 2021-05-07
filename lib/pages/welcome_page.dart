@@ -20,31 +20,34 @@ class _WelcomePageState extends State<WelcomePage> {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset("assets/img/work.png")
-              .box
-              .margin(EdgeInsets.only(top: h * 5, bottom: h * 6.6))
-              .make(),
-          logo,
-          "Bank Soal merupakan sekumpulan butir soal terkalibrasi (teruji), baik secara teori "
-                  "maupun empiris, dan memuat informasi penting. Untuk menguji kemanpuan siswa, agar saling berkompetisi."
-              .text
-              .medium
-              .white
-              .justify
-              .make()
-              .box
-              .width(280)
-              .make()
-              .marginOnly(top: h * 2),
-          BoxRounded(
-            onLoginPress: () => Get.toNamed(Routes.LOGIN),
-            onRegisterPress: () => Get.toNamed(Routes.REGISTER),
-          ).marginOnly(top: h * 8)
-        ],
-      ).box.color(primaryC).width(w).height(h * 100).make().scrollVertical(),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset("assets/img/work.png")
+                .box
+                .margin(EdgeInsets.only(top: h * 5, bottom: h * 6.6))
+                .make(),
+            logo,
+            "Bank Soal merupakan sekumpulan butir soal terkalibrasi (teruji), baik secara teori "
+                    "maupun empiris, dan memuat informasi penting. Untuk menguji kemanpuan siswa, agar saling berkompetisi."
+                .text
+                .medium
+                .white
+                .justify
+                .make()
+                .box
+                .width(280)
+                .make()
+                .marginOnly(top: h * 2),
+            BoxRounded(
+              onLoginPress: () => Get.toNamed(Routes.LOGIN),
+              onRegisterPress: () => Get.toNamed(Routes.REGISTER),
+            ).marginOnly(top: h * 8)
+          ],
+        ).box.color(primaryC).width(w).height(h * 100).make().scrollVertical(),
+      ),
     );
   }
 }

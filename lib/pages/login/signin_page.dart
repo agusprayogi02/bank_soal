@@ -16,85 +16,89 @@ class SignInPage extends GetView<SignInController> {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      body: Container(
-        child: Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.all(14),
-                  child: RoundedBack(onPress: () => Get.back()),
-                ),
-                Container(width: w, child: Image.asset("assets/img/study.png")),
-              ],
-            ),
-            Column(
-              children: [
-                Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                    color: lightC,
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          child: Stack(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(14),
+                    child: RoundedBack(onPress: () => Get.back()),
                   ),
-                  height: h * 0.46,
-                  padding: EdgeInsets.symmetric(
-                      horizontal: context.percentWidth * 9, vertical: context.percentHeight * 1.8),
-                  child: Obx(
-                    () => Column(
-                      children: [
-                        "Login".text.size(32).color(dartPrimaryC).bold.make(),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        CustomTextForm(
-                          labelText: "Email",
-                          autocorrect: false,
-                          textInputType: TextInputType.emailAddress,
-                          onChanged: SignInController.to.onEmail,
-                          prefixIcon: Icon(Icons.email),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        CustomTextForm(
-                          labelText: "Password",
-                          autocorrect: false,
-                          obscureText: SignInController.to.enable.value,
-                          onChanged: SignInController.to.onPass,
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: Icon(SignInController.to.enable.value
-                                  ? Icons.visibility
-                                  : Icons.visibility_off)
-                              .onInkTap(SignInController.to.onSecure),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        RoundedButton(
-                          label: "Login",
-                          size: 20,
-                          onPress: () => SignInController.to.onSubmit(),
-                          width: w,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            "Belum Punya Akun? ".text.make(),
-                            "Register"
-                                .text
-                                .color(primaryC)
-                                .make()
-                                .onInkTap(() => Get.offAndToNamed(Routes.REGISTER))
-                          ],
-                        ).marginOnly(top: 15)
-                      ],
+                  Container(width: w, child: Image.asset("assets/img/study.png")),
+                ],
+              ),
+              Column(
+                children: [
+                  Spacer(),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: lightC,
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                    ),
+                    height: h * 0.46,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: context.percentWidth * 9,
+                        vertical: context.percentHeight * 1.8),
+                    child: Obx(
+                      () => Column(
+                        children: [
+                          "Login".text.size(32).color(dartPrimaryC).bold.make(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          CustomTextForm(
+                            labelText: "Email",
+                            autocorrect: false,
+                            textInputType: TextInputType.emailAddress,
+                            onChanged: SignInController.to.onEmail,
+                            prefixIcon: Icon(Icons.email),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          CustomTextForm(
+                            labelText: "Password",
+                            autocorrect: false,
+                            obscureText: SignInController.to.enable.value,
+                            onChanged: SignInController.to.onPass,
+                            prefixIcon: Icon(Icons.lock),
+                            suffixIcon: Icon(SignInController.to.enable.value
+                                    ? Icons.visibility
+                                    : Icons.visibility_off)
+                                .onInkTap(SignInController.to.onSecure),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          RoundedButton(
+                            label: "Login",
+                            size: 20,
+                            onPress: () => SignInController.to.onSubmit(),
+                            width: w,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              "Belum Punya Akun? ".text.make(),
+                              "Register"
+                                  .text
+                                  .color(primaryC)
+                                  .make()
+                                  .onInkTap(() => Get.offAndToNamed(Routes.REGISTER))
+                            ],
+                          ).marginOnly(top: 15)
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            )
-          ],
+                ],
+              )
+            ],
+          ),
         ),
       ),
       backgroundColor: primaryC,

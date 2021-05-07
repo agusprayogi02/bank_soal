@@ -57,7 +57,7 @@ class UserModel extends Equatable {
       };
 
   @override
-  List<Object> get props => [uid, email];
+  List<Object> get props => [uid, firstName, lastName, email, jk, role, sekolah];
 }
 
 // ignore: must_be_immutable
