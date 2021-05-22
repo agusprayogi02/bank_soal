@@ -57,7 +57,6 @@ class _HomePageState extends State<HomePage> {
                   "Pelajaran",
                   style: titleT,
                 ),
-                Vx
               ],
             ).box.margin(EdgeInsets.all(15)).alignTopLeft.make(),
           ],

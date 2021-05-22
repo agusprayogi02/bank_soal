@@ -1,3 +1,4 @@
+import 'package:bank_soal/pages/splash/splash_page.dart';
 import 'package:bank_soal/utils/app_pages.dart';
 import 'package:bank_soal/utils/app_themes.dart';
 import 'package:flutter/material.dart';
