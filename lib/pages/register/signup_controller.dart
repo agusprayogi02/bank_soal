@@ -1,4 +1,4 @@
-import 'package:bank_soal/repositories/auth_repository.dart';
+import 'package:bank_soal/data/repositories/auth_repository.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 

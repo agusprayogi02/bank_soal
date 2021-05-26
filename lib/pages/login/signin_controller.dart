@@ -1,5 +1,5 @@
-import 'package:bank_soal/repositories/auth_repository.dart';
-import 'package:bank_soal/utils/app_pages.dart';
+import 'package:bank_soal/data/repositories/auth_repository.dart';
+import 'package:bank_soal/routes/app_pages.dart';
 import 'package:bank_soal/utils/app_state.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

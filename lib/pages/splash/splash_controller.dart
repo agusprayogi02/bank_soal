@@ -1,5 +1,5 @@
-import 'package:bank_soal/repositories/auth_repository.dart';
-import 'package:bank_soal/utils/app_pages.dart';
+import 'package:bank_soal/data/repositories/auth_repository.dart';
+import 'package:bank_soal/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {

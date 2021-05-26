@@ -2,7 +2,7 @@ import 'package:bank_soal/components/button/rounded_back.dart';
 import 'package:bank_soal/components/button/rounded_button.dart';
 import 'package:bank_soal/components/costom_text_form.dart';
 import 'package:bank_soal/pages/register/signup_controller.dart';
-import 'package:bank_soal/utils/app_pages.dart';
+import 'package:bank_soal/routes/app_pages.dart';
 import 'package:bank_soal/utils/style.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,8 @@ class SignUpPage extends GetView<SignUpController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   RoundedBack(onPress: () => Get.back()).marginAll(14),
-                  Container(width: w, child: Image.asset("assets/img/study.png")),
+                  Container(
+                      width: w, child: Image.asset("assets/img/study.png")),
                 ],
               ),
               Column(
@@ -37,7 +38,8 @@ class SignUpPage extends GetView<SignUpController> {
                   Container(
                     decoration: BoxDecoration(
                       color: lightC,
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30)),
                     ),
                     height: h * 0.6,
                     padding: EdgeInsets.symmetric(
@@ -49,7 +51,12 @@ class SignUpPage extends GetView<SignUpController> {
                         () => Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            "Register".text.size(32).color(dartPrimaryC).bold.make(),
+                            "Register"
+                                .text
+                                .size(32)
+                                .color(dartPrimaryC)
+                                .bold
+                                .make(),
                             SizedBox(
                               height: 20,
                             ),
@@ -120,10 +127,14 @@ class SignUpPage extends GetView<SignUpController> {
                                     items: items
                                         .map((e) => DropdownMenuItem(
                                               value: e,
-                                              child: "$e".text.make().w(context.percentWidth * 60),
+                                              child: "$e"
+                                                  .text
+                                                  .make()
+                                                  .w(context.percentWidth * 60),
                                             ))
                                         .toList(),
-                                    onChanged: (value) => SignUpController.to.onJk(value),
+                                    onChanged: (value) =>
+                                        SignUpController.to.onJk(value),
                                   )
                                 ],
                               ),

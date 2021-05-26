@@ -1,5 +1,5 @@
 import 'package:bank_soal/components/button/box_rounded.dart';
-import 'package:bank_soal/utils/app_pages.dart';
+import 'package:bank_soal/routes/app_pages.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

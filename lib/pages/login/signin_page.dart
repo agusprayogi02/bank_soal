@@ -2,7 +2,7 @@ import 'package:bank_soal/components/button/rounded_back.dart';
 import 'package:bank_soal/components/costom_text_form.dart';
 import 'package:bank_soal/components/button/rounded_button.dart';
 import 'package:bank_soal/pages/login/signin_controller.dart';
-import 'package:bank_soal/utils/app_pages.dart';
+import 'package:bank_soal/routes/app_pages.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,7 +28,8 @@ class SignInPage extends GetView<SignInController> {
                     margin: EdgeInsets.all(14),
                     child: RoundedBack(onPress: () => Get.back()),
                   ),
-                  Container(width: w, child: Image.asset("assets/img/study.png")),
+                  Container(
+                      width: w, child: Image.asset("assets/img/study.png")),
                 ],
               ),
               Column(
@@ -37,7 +38,8 @@ class SignInPage extends GetView<SignInController> {
                   Container(
                     decoration: BoxDecoration(
                       color: lightC,
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30)),
                     ),
                     height: h * 0.46,
                     padding: EdgeInsets.symmetric(
@@ -84,11 +86,8 @@ class SignInPage extends GetView<SignInController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               "Belum Punya Akun? ".text.make(),
-                              "Register"
-                                  .text
-                                  .color(primaryC)
-                                  .make()
-                                  .onInkTap(() => Get.offAndToNamed(Routes.REGISTER))
+                              "Register".text.color(primaryC).make().onInkTap(
+                                  () => Get.offAndToNamed(Routes.REGISTER))
                             ],
                           ).marginOnly(top: 15)
                         ],

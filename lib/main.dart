@@ -1,6 +1,5 @@
-import 'package:bank_soal/pages/splash/splash_page.dart';
-import 'package:bank_soal/utils/app_pages.dart';
-import 'package:bank_soal/utils/app_themes.dart';
+import 'package:bank_soal/routes/app_pages.dart';
+import 'package:bank_soal/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
