@@ -13,7 +13,7 @@ class RoundedBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var w = context.percentWidth, h = context.percentHeight;
+    var w = context.percentWidth;
     return VxCapsule(
       height: 50,
       width: w * 100,

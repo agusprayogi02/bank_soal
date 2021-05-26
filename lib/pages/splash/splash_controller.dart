@@ -9,11 +9,11 @@ class SplashController extends GetxController {
 
   void change() async {
     var auth = await this.repository.onAuth();
-    if (auth) {
-      Get.offAllNamed(Routes.HOME);
-    } else {
-      Get.offAllNamed(Routes.WELCOME);
-    }
+    Future.delayed(
+      Duration(seconds: 2),
+      () =>
+          auth ? Get.offAllNamed(Routes.HOME) : Get.offAllNamed(Routes.WELCOME),
+    );
   }
 
   @override
