@@ -41,8 +41,9 @@ class Body extends StatelessWidget {
                   ),
                   height: h * 0.6,
                   padding: EdgeInsets.symmetric(
-                      horizontal: context.percentWidth * 9,
-                      vertical: context.percentHeight * 1.8),
+                    horizontal: context.percentWidth * 9,
+                    vertical: context.percentWidth * 4,
+                  ),
                   child: SingleChildScrollView(
                     physics: ClampingScrollPhysics(),
                     child: Obx(

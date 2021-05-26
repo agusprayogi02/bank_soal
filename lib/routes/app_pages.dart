@@ -1,4 +1,5 @@
 import 'package:bank_soal/bindings/auth_binding.dart';
+import 'package:bank_soal/bindings/home_binding.dart';
 import 'package:bank_soal/pages/register/signup_page.dart';
 import 'package:bank_soal/pages/home/home_page.dart';
 import 'package:bank_soal/pages/login/signin_page.dart';
@@ -12,13 +13,26 @@ abstract class AppPages {
     GetPage(
       name: Routes.HOME,
       page: () => HomePage(),
+      binding: HomeBinding(),
     ),
     GetPage(
-        name: Routes.INITIAL, page: () => SplashPage(), binding: AuthBinding()),
-    GetPage(name: Routes.WELCOME, page: () => WelcomePage()),
+      name: Routes.INITIAL,
+      page: () => SplashPage(),
+      binding: AuthBinding(),
+    ),
     GetPage(
-        name: Routes.LOGIN, page: () => SignInPage(), binding: AuthBinding()),
+      name: Routes.WELCOME,
+      page: () => WelcomePage(),
+    ),
     GetPage(
-        name: Routes.REGISTER, page: () => SignUpPage(), binding: AuthBinding())
+      name: Routes.LOGIN,
+      page: () => SignInPage(),
+      binding: AuthBinding(),
+    ),
+    GetPage(
+      name: Routes.REGISTER,
+      page: () => SignUpPage(),
+      binding: AuthBinding(),
+    )
   ];
 }

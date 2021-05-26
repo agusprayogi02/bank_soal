@@ -15,15 +15,16 @@ class BackgroundAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          margin: EdgeInsets.all(14),
-          child: RoundedBack(onPress: () => Get.back()),
-        ),
-        Container(width: w, child: Image.asset(imgSrc)),
-      ],
+    return SingleChildScrollView(
+      child: Stack(
+        children: [
+          Container(width: w, child: Image.asset(imgSrc)),
+          Container(
+            margin: EdgeInsets.all(14),
+            child: RoundedBack(onPress: () => Get.back()),
+          ),
+        ],
+      ),
     );
   }
 }

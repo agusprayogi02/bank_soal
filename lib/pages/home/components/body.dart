@@ -1,4 +1,5 @@
 import 'package:bank_soal/components/rounded_box.dart';
+import 'package:bank_soal/pages/home/home_controller.dart';
 import 'package:bank_soal/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -40,28 +41,37 @@ class Body extends StatelessWidget {
             ],
           ),
         ), // atas
-        SizedBox(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Pelajaran",
-                style: titleT,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Pelajaran",
+              style: titleT,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ...List.generate(
+                    20,
+                    (index) => Text("apa kabar $index"),
+                  )
+                ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ...List.generate(
-                      20,
-                      (index) => Text("apa kabar $index"),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ).box.margin(EdgeInsets.all(15)).alignTopLeft.make(),
+            )
+          ],
+        ).box.margin(EdgeInsets.all(15)).alignTopLeft.make(),
+        SizedBox(
+          height: 10,
+        ),
+        MaterialButton(
+          color: Colors.white,
+          splashColor: Colors.black,
+          elevation: 4,
+          animationDuration: Duration(milliseconds: 500),
+          onPressed: () => HomeController.to.logout(),
+          child: Text("logout"),
         ),
       ],
     );

@@ -9,10 +9,12 @@ abstract class AuthRepository {
   Future<UserModel> authRegister(String firstName, String lastName,
       String email, String password, String jk, String role);
   Future<bool> onAuth();
+  Future<void> logOut();
 }
 
 class AuthRepositoryImp implements AuthRepository {
   final UserApiClient apiClient;
+  var box = GetStorage();
 
   AuthRepositoryImp({@required this.apiClient}) : assert(apiClient != null);
 
@@ -36,7 +38,6 @@ class AuthRepositoryImp implements AuthRepository {
 
   @override
   Future<bool> onAuth() async {
-    var box = GetStorage();
     try {
       var user = box.read('login');
       if (user) {
@@ -47,4 +48,7 @@ class AuthRepositoryImp implements AuthRepository {
       return false;
     }
   }
+
+  @override
+  Future<void> logOut() => box.write("login", false);
 }

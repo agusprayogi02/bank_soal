@@ -41,7 +41,9 @@ class Body extends StatelessWidget {
                   ),
                   height: h * 0.46,
                   padding: EdgeInsets.symmetric(
-                      horizontal: w * 9, vertical: h * 1.8),
+                    horizontal: context.percentWidth * 9,
+                    vertical: context.percentWidth * 4,
+                  ),
                   child: Obx(
                     () => Column(
                       children: [
