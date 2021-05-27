@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 const String apiUrl = "http://192.168.43.203:4000";
+const String apiImg = apiUrl + '/img/';
 const lightC = Color(0xFF83B9FF);
 const whiteC = Color(0xFFFFFFFF);
 const primaryC = Color(0xFF2962FF);
