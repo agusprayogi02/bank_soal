@@ -33,7 +33,10 @@ class Body extends StatelessWidget {
                   "Pelajaran",
                   style: titleT,
                 ),
-                "View All".text.gray100.make().onTap(() {})
+                TextButton(
+                  onPressed: () {},
+                  child: "View All".text.gray100.size(12).make(),
+                ),
               ],
             ),
             SingleChildScrollView(

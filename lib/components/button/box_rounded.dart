@@ -1,3 +1,4 @@
+import 'package:bank_soal/utils/style.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,47 +7,64 @@ import 'package:velocity_x/velocity_x.dart';
 class BoxRounded extends StatelessWidget {
   final Function onLoginPress;
   final Function onRegisterPress;
-  const BoxRounded({Key key, @required this.onLoginPress, @required this.onRegisterPress})
-      : super(key: key);
+  final double width;
+
+  const BoxRounded({
+    Key key,
+    @required this.onLoginPress,
+    @required this.onRegisterPress,
+    this.width,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: MaterialButton(
-              color: whiteC,
-              splashColor: lightC,
-              onPressed: onRegisterPress,
-              child: "Register"
-                  .text
-                  .size(Get.height * 0.028)
-                  .color(dartPrimaryC)
-                  .bold
-                  .make()
-                  .marginSymmetric(horizontal: 18, vertical: 12),
+      child: SizedBox(
+        width: this.width,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: InkWell(
+                splashColor: lightC,
+                onTap: onRegisterPress,
+                child: Container(
+                  color: whiteC,
+                  alignment: AlignmentDirectional.center,
+                  width: width * 0.5,
+                  child: "Register"
+                      .text
+                      .size(kfontSize * 1.7)
+                      .color(dartPrimaryC)
+                      .bold
+                      .make()
+                      .marginSymmetric(vertical: kMargin * 1.4),
+                ),
+              ),
             ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: MaterialButton(
-              splashColor: lightC,
-              onPressed: onLoginPress,
-              child: "Login"
-                  .text
-                  .size(Get.height * 0.028)
-                  .color(whiteC)
-                  .bold
-                  .make()
-                  .marginSymmetric(horizontal: 18, vertical: 12),
-            ),
-          )
-        ],
-      ).backgroundColor(dartPrimaryC),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: InkWell(
+                splashColor: lightC,
+                onTap: onLoginPress,
+                child: Container(
+                  width: width * 0.5,
+                  alignment: AlignmentDirectional.center,
+                  child: "Login"
+                      .text
+                      .size(kfontSize * 1.7)
+                      .color(whiteC)
+                      .bold
+                      .make()
+                      .marginSymmetric(vertical: kMargin * 1.4),
+                ),
+              ),
+            )
+          ],
+        ).backgroundColor(dartPrimaryC),
+      ),
     ).marginSymmetric(horizontal: Get.width * 0.09);
   }
 }

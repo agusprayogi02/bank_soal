@@ -1,5 +1,4 @@
 import 'package:bank_soal/pages/register/signup_controller.dart';
-import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +13,7 @@ class SignUpPage extends GetView<SignUpController> {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      backgroundColor: primaryC,
+      backgroundColor: Get.theme.backgroundColor,
       body: Body(w: w, h: h, items: items),
     );
   }

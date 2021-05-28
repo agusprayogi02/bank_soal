@@ -2,6 +2,7 @@ import 'package:bank_soal/utils/style.dart';
 import 'package:bank_soal/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CardPelajaran extends StatelessWidget {
   const CardPelajaran({
@@ -22,7 +23,7 @@ class CardPelajaran extends StatelessWidget {
       child: Container(
         height: 115,
         width: 120,
-        margin: EdgeInsets.only(right: kMargin * 1.5),
+        margin: EdgeInsets.symmetric(horizontal: kMargin * 0.8),
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(color: Colors.black),
@@ -38,14 +39,20 @@ class CardPelajaran extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 95,
+              height: 92,
               width: 120,
               child: AspectRatio(
                 aspectRatio: 1,
-                child: FadeInImage.assetNetwork(
-                  placeholder: "assets/gif/spinner.gif",
-                  image: "${apiImg}pelajaran/$imgSrc",
-                  fit: BoxFit.cover,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(kRadius),
+                    topLeft: Radius.circular(kRadius),
+                  ),
+                  child: FadeInImage.assetNetwork(
+                    placeholder: "assets/gif/spinner.gif",
+                    image: "${apiImg}pelajaran/$imgSrc",
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

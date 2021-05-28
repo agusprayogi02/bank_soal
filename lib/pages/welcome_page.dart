@@ -20,6 +20,7 @@ class _WelcomePageState extends State<WelcomePage> {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
+      backgroundColor: context.backgroundColor,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Column(
@@ -42,11 +43,12 @@ class _WelcomePageState extends State<WelcomePage> {
                 .make()
                 .marginOnly(top: h * 2),
             BoxRounded(
+              width: context.percentWidth * 70,
               onLoginPress: () => Get.toNamed(Routes.LOGIN),
               onRegisterPress: () => Get.toNamed(Routes.REGISTER),
             ).marginOnly(top: h * 8)
           ],
-        ).box.color(primaryC).width(w).height(h * 100).make().scrollVertical(),
+        ).box.width(w).height(h * 100).make().scrollVertical(),
       ),
     );
   }

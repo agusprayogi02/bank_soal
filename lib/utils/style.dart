@@ -174,3 +174,4 @@ const inputFieldDefaultBorderStyle = OutlineInputBorder(
 const double kPadding = 8;
 const double kMargin = 8;
 const double kRadius = 10;
+const double kfontSize = 12;

@@ -1,6 +1,6 @@
 import 'package:bank_soal/pages/splash/splash_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class SplashPage extends GetView<SplashController> {
@@ -10,6 +10,7 @@ class SplashPage extends GetView<SplashController> {
   Widget build(BuildContext context) {
     SplashController.to.change();
     return Scaffold(
+      backgroundColor: context.backgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
