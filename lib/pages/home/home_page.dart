@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'components/body.dart';
+import 'components/bottom_navigation.dart';
 
 class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Get.theme.backgroundColor,
       appBar: AppBar(
         toolbarHeight: 0,
       ),
+      backgroundColor: Get.theme.accentColor,
       body: Body(),
+      bottomNavigationBar: buildBottomNavigationBar(),
     );
   }
 }
