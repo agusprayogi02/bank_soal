@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class SplashController extends GetxController {
   static SplashController get to => Get.find();
   final AuthRepository repository;
-  SplashController({required this.repository}) : assert(repository != null);
+  SplashController({required this.repository});
 
   void change() async {
     var auth = await this.repository.onAuth();

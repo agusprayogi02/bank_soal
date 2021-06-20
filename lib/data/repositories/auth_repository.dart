@@ -2,7 +2,6 @@ import 'package:bank_soal/data/models/user_model.dart';
 import 'package:bank_soal/data/services/api/user_api.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:meta/meta.dart';
 
 abstract class AuthRepository {
   Future<UserModel?> authLogin(String email, String password);
@@ -16,7 +15,7 @@ class AuthRepositoryImp implements AuthRepository {
   final UserApiClient apiClient;
   var box = GetStorage();
 
-  AuthRepositoryImp({required this.apiClient}) : assert(apiClient != null);
+  AuthRepositoryImp({required this.apiClient});
 
   @override
   Future<UserModel?> authLogin(String email, String password) async {

@@ -1,11 +1,10 @@
 import 'package:bank_soal/data/repositories/auth_repository.dart';
 import 'package:get/get.dart';
-import 'package:meta/meta.dart';
 
 class SignUpController extends GetxController {
   static SignUpController get to => Get.find();
   final AuthRepository repository;
-  SignUpController({required this.repository}) : assert(repository != null);
+  SignUpController({required this.repository});
 
   final fist = ''.obs;
   final last = ''.obs;
