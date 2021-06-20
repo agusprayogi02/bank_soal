@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 
 class Body extends StatelessWidget {
   const Body({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

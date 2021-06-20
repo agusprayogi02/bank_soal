@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   static HomeController get to => Get.find<HomeController>();
   final AuthRepository repository;
-  HomeController({@required this.repository}) : assert(repository != null);
+  HomeController({required this.repository}) : assert(repository != null);
 
   void logout() async {
     this.repository.logOut();

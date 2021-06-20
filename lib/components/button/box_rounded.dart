@@ -7,12 +7,12 @@ import 'package:velocity_x/velocity_x.dart';
 class BoxRounded extends StatelessWidget {
   final Function onLoginPress;
   final Function onRegisterPress;
-  final double width;
+  final double? width;
 
   const BoxRounded({
-    Key key,
-    @required this.onLoginPress,
-    @required this.onRegisterPress,
+    Key? key,
+    required this.onLoginPress,
+    required this.onRegisterPress,
     this.width,
   }) : super(key: key);
 
@@ -29,11 +29,11 @@ class BoxRounded extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: InkWell(
                 splashColor: lightC,
-                onTap: onRegisterPress,
+                onTap: onRegisterPress as void Function()?,
                 child: Container(
                   color: whiteC,
                   alignment: AlignmentDirectional.center,
-                  width: width * 0.5,
+                  width: width! * 0.5,
                   child: "Register"
                       .text
                       .size(kfontSize * 1.7)
@@ -48,9 +48,9 @@ class BoxRounded extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: InkWell(
                 splashColor: lightC,
-                onTap: onLoginPress,
+                onTap: onLoginPress as void Function()?,
                 child: Container(
-                  width: width * 0.5,
+                  width: width! * 0.5,
                   alignment: AlignmentDirectional.center,
                   child: "Login"
                       .text

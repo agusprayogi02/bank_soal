@@ -12,10 +12,10 @@ import '../signup_controller.dart';
 
 class Body extends StatelessWidget {
   const Body({
-    Key key,
-    @required this.w,
-    @required this.h,
-    @required this.items,
+    Key? key,
+    required this.w,
+    required this.h,
+    required this.items,
   }) : super(key: key);
 
   final double w;

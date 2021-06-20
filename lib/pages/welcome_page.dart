@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import "package:velocity_x/velocity_x.dart";
 
 class WelcomePage extends StatefulWidget {
-  WelcomePage({Key key}) : super(key: key);
+  WelcomePage({Key? key}) : super(key: key);
 
   @override
   _WelcomePageState createState() => _WelcomePageState();

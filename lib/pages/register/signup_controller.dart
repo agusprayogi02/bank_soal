@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 class SignUpController extends GetxController {
   static SignUpController get to => Get.find();
   final AuthRepository repository;
-  SignUpController({@required this.repository}) : assert(repository != null);
+  SignUpController({required this.repository}) : assert(repository != null);
 
   final fist = ''.obs;
   final last = ''.obs;

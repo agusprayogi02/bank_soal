@@ -7,7 +7,7 @@ import 'package:get_storage/get_storage.dart';
 class SignInController extends GetxController {
   static SignInController get to => Get.find();
 
-  final AuthRepository repository;
+  final AuthRepository? repository;
   SignInController({this.repository});
 
   final email = "".obs;
@@ -20,7 +20,7 @@ class SignInController extends GetxController {
   void onSecure() => this.enable.value = !this.enable.value;
   void onSubmit() async {
     if (email.value != '' && password.value != '') {
-      var user = await this.repository.authLogin(email.value, password.value);
+      var user = await this.repository!.authLogin(email.value, password.value);
       box.write("user", user.toString());
       box.write("login", true);
       Get.offAndToNamed(Routes.HOME);

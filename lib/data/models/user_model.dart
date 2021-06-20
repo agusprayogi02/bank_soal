@@ -25,14 +25,14 @@ class UserModel extends Equatable {
     this.sekolah,
   });
 
-  String uid;
-  String firstName;
-  String lastName;
-  String email;
-  String password;
-  String jk;
-  String role;
-  Sekolah sekolah;
+  String? uid;
+  String? firstName;
+  String? lastName;
+  String? email;
+  String? password;
+  String? jk;
+  String? role;
+  Sekolah? sekolah;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         uid: json["uid"],
@@ -53,11 +53,11 @@ class UserModel extends Equatable {
         "password": password,
         "jk": jk,
         "role": role,
-        "sekolah": sekolah.toJson(),
+        "sekolah": sekolah!.toJson(),
       };
 
   @override
-  List<Object> get props => [uid, firstName, lastName, email, jk, role, sekolah];
+  List<Object?> get props => [uid, firstName, lastName, email, jk, role, sekolah];
 }
 
 // ignore: must_be_immutable
@@ -70,11 +70,11 @@ class Sekolah extends Equatable {
     this.kode,
   });
 
-  int id;
-  String nama;
-  int kelas;
-  String jurusan;
-  String kode;
+  int? id;
+  String? nama;
+  int? kelas;
+  String? jurusan;
+  String? kode;
 
   factory Sekolah.fromJson(Map<String, dynamic> json) => Sekolah(
         id: json["id"],
@@ -93,5 +93,5 @@ class Sekolah extends Equatable {
       };
 
   @override
-  List<Object> get props => [id, nama, kelas, jurusan, kode];
+  List<Object?> get props => [id, nama, kelas, jurusan, kode];
 }

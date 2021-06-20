@@ -11,9 +11,9 @@ import '../signin_controller.dart';
 
 class Body extends StatelessWidget {
   const Body({
-    Key key,
-    @required this.w,
-    @required this.h,
+    Key? key,
+    required this.w,
+    required this.h,
   }) : super(key: key);
 
   final double w;

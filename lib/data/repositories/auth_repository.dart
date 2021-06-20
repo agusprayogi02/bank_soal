@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:meta/meta.dart';
 
 abstract class AuthRepository {
-  Future<UserModel> authLogin(String email, String password);
+  Future<UserModel?> authLogin(String email, String password);
   Future<UserModel> authRegister(String firstName, String lastName,
       String email, String password, String jk, String role);
   Future<bool> onAuth();
@@ -16,10 +16,10 @@ class AuthRepositoryImp implements AuthRepository {
   final UserApiClient apiClient;
   var box = GetStorage();
 
-  AuthRepositoryImp({@required this.apiClient}) : assert(apiClient != null);
+  AuthRepositoryImp({required this.apiClient}) : assert(apiClient != null);
 
   @override
-  Future<UserModel> authLogin(String email, String password) async {
+  Future<UserModel?> authLogin(String email, String password) async {
     try {
       var user = await apiClient.postLogin(email, password);
       return user;

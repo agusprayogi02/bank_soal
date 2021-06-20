@@ -5,10 +5,10 @@ import 'package:get/get.dart';
 
 class CardPelajaran extends StatelessWidget {
   const CardPelajaran({
-    Key key,
-    @required this.imgSrc,
-    @required this.pelajaran,
-    @required this.onTap,
+    Key? key,
+    required this.imgSrc,
+    required this.pelajaran,
+    required this.onTap,
   }) : super(key: key);
 
   final String imgSrc;
@@ -18,7 +18,7 @@ class CardPelajaran extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Container(
         height: 115,
         width: 120,

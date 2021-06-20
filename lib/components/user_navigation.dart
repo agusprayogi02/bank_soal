@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 
 class UserNavigation extends StatelessWidget {
   const UserNavigation({
-    Key key,
-    @required this.nama,
-    @required this.kelas,
+    Key? key,
+    required this.nama,
+    required this.kelas,
   }) : super(key: key);
 
   final String nama;

@@ -4,28 +4,28 @@ import 'package:get/get.dart';
 
 class CustomTextForm extends StatelessWidget {
   final String labelText;
-  final Function onTap;
-  final ValueChanged<String> onChanged;
-  final Function onEditingComplete;
+  final Function? onTap;
+  final ValueChanged<String>? onChanged;
+  final Function? onEditingComplete;
   final bool obscureText;
-  final TextInputType textInputType;
-  final Function(String) onSaved;
+  final TextInputType? textInputType;
+  final Function(String?)? onSaved;
   final bool autocorrect;
-  final FormFieldValidator<String> validator;
-  final String errorText;
-  final String initialValue;
-  final TextEditingController controller;
+  final FormFieldValidator<String>? validator;
+  final String? errorText;
+  final String? initialValue;
+  final TextEditingController? controller;
   final int maxLines;
   final bool autovalidate;
-  final String hintText;
-  final TextInputAction textInputAction;
-  final Widget suffix;
-  final Widget suffixIcon;
-  final Widget prefixIcon;
+  final String? hintText;
+  final TextInputAction? textInputAction;
+  final Widget? suffix;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
 
   const CustomTextForm({
-    Key key,
-    @required this.labelText,
+    Key? key,
+    required this.labelText,
     this.onTap,
     this.onChanged,
     this.onEditingComplete,
@@ -54,9 +54,9 @@ class CustomTextForm extends StatelessWidget {
         maxLines: maxLines,
         controller: controller,
         initialValue: initialValue,
-        onTap: onTap,
+        onTap: onTap as void Function()?,
         onChanged: onChanged,
-        onEditingComplete: onEditingComplete,
+        onEditingComplete: onEditingComplete as void Function()?,
         cursorColor: Get.theme.primaryColor,
         style: inputFieldTextStyle,
         obscureText: obscureText,

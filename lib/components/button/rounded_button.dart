@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class RoundedButton extends StatelessWidget {
-  final double size;
+  final double? size;
   final String label;
-  final Function onPress;
+  final Function? onPress;
   final Color color;
   final double borderRadius;
-  final double width;
+  final double? width;
   const RoundedButton({
-    Key key,
+    Key? key,
     this.size,
-    @required this.label,
+    required this.label,
     this.onPress,
     this.color = primaryC,
     this.borderRadius = 5,
@@ -27,14 +27,14 @@ class RoundedButton extends StatelessWidget {
         color: color,
         textColor: whiteC,
         splashColor: lightC,
-        onPressed: onPress,
+        onPressed: onPress as void Function()?,
         child: "$label"
             .text
             .semiBold
             .size(size)
             .make()
             .box
-            .margin(EdgeInsets.symmetric(vertical: size * 0.4))
+            .margin(EdgeInsets.symmetric(vertical: size! * 0.4))
             .make(),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),

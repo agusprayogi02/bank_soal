@@ -5,9 +5,9 @@ import 'button/rounded_back.dart';
 
 class BackgroundAuth extends StatelessWidget {
   const BackgroundAuth({
-    Key key,
-    @required this.w,
-    @required this.imgSrc,
+    Key? key,
+    required this.w,
+    required this.imgSrc,
   }) : super(key: key);
 
   final double w;
