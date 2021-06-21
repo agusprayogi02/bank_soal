@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:bank_soal/data/models/user_model.dart';
 import 'package:bank_soal/utils/utils.dart';
-import 'package:get/get_connect/connect.dart';
+import 'package:get/get.dart';
 
 class UserApiClient extends GetConnect {
   Future<UserModel> postLogin(String user, String pass) async {
